@@ -1,0 +1,18 @@
+im1 = imread('dark_rays.jpg');
+im2 = imread('stellar_wildfire_n.jpg');
+im3 = rgb2gray(im2);
+figure(1); imshow(im1);
+h = fspecial('average',5);
+B = imfilter(im1,h);
+C = im1 - B;
+output1 = im1 + 2*C;
+figure(2); imshow(output1);
+F = medfilt2(im3);
+h1 = fspecial('average',7);
+D = imfilter(F,h1);
+E = F - D;
+output2 = F + 2*E;
+figure(3); imshow(im2);
+figure(4); imshow(output2);
+% imwrite(output1,'drak_output1.jpg');
+% imwrite(output2,'stellar_output2.jpg');

@@ -1,0 +1,16 @@
+im1 = imread('PCB.jpg') ;
+im2 = imread('PCB_bonus.jpg');
+im3 = imread('PCB_template.bmp');
+im1_2gray = rgb2gray(im1);
+im2_2gray = rgb2gray(im2);
+figure(3); imhist(im1_2gray);
+BW_im1 = im2bw(im1_2gray,0.25);
+% figure(3); imshow(BW_im1);
+output1 = im3 - BW_im1;
+figure(1); imshow(output1);
+BW_im2 = im2bw(im2_2gray,0.25);
+% figure(4); imshow(BW_im2);
+output2 = im3 - BW_im2;
+figure(2); imshow(output2);
+imwrite(output1,'PCB_output.jpg');
+imwrite(output2,'PCB_bonus_output.jpg');

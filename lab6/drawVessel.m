@@ -1,0 +1,10 @@
+function imout = drawVessel(imGray,roi)
+IMgrayR = imGray(:,:,1);
+IMgrayG = imGray(:,:,1);
+IMgrayB = imGray(:,:,1);
+IMgrayR(roi) = 255;
+IMgrayG(roi) = 0;
+IMgrayB(roi) = 0;
+imout(:,:,1) = IMgrayR;
+imout(:,:,2) = IMgrayG;
+imout(:,:,3) = IMgrayB;
